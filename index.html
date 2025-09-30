@@ -1,427 +1,937 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohcine Accessories | Luxury Men's Collection</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noortomark - Premium Services</title>
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
   <style>
+    /* Black and gold palette */
     :root {
-      --dark-bg: #0a0a0a;
-      --gold: #c6a467;
-      --light-gold: #d4af37;
-      --dark-gold: #8b7500;
-      --charcoal: #1a1a1a;
-      --light-charcoal: #2a2a2a;
-      --text-light: #e0e0e0;
+      --gold: #d4af37;
+      --gold-dark: #b08b2f;
+      --black: #000000;
+      --gray-dark: #1a1a1a;
+      --gray-light: #333333;
+      --text-gold: #f0d87d;
+      --form-bg: #0a0a0a;
     }
-    
+
     body {
-      font-family: 'Raleway', sans-serif;
-      background-color: var(--dark-bg);
-      color: var(--text-light);
-      padding-top: 76px;
+      background-color: var(--black);
+      
+      color: var(--gold);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 90px;
+    }
+
+    a,
+    a:hover,
+    a:focus {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background-color: var(--black);
+      color: var(--gold);
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.75rem 2.5rem;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+    .btn-dark {
+      background-color: var(--gold);
+      color: var(--black);
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 0.75rem 2.5rem;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    .btn-gold:hover,
+    .btn-gold:focus {
+      background-color: var(--gold-dark);
+      color: #000;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0, 0, 0, 0.85);
+      border-bottom: 1.5px solid var(--gold);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 24px 0 rgba(212, 175, 55, 0.08);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      transition: background 0.3s;
+    }
+
+    .navbar-brand {
+      color: var(--gold) !important;
+      font-size: 2rem;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      text-shadow: 0 0 8px var(--gold-dark);
+    }
+
+    .navbar-toggler {
+      border-color: var(--gold);
+      outline: none;
+      box-shadow: none;
+     
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='gold' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+    }
+
+    .nav-link {
+      color: var(--gold);
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-left: 1.2rem;
+      margin-right: 1.2rem;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-link::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--text-gold);
+    }
+
+    .nav-link:hover::after,
+    .nav-link:focus::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 1rem;
+      background-image: url(5911148255692049482.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px var(--gold);
+    }
+
+    #hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      color: var(--text-gold);
+    }
+
+    /* Services Section */
+    #services {
+      padding: 5rem 1rem;
+      background-color: var(--black);
+      color: var(--gold);
+    }
+
+    #services h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.75rem;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+      text-shadow: 0 0 6px var(--gold);
+    }
+
+    .service-card {
+      background-color: var(--black);
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px var(--gold);
+    }
+
+    /* Client Form Section */
+    #client-form {
+      padding: 5rem 1rem;
+      background-color: var(--black);
+      color: var(--gold);
+    }
+
+    #client-form h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.75rem;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold);
+    }
+
+    .form-control,
+    .form-select {
+      background-color: var(--form-bg);
+      border: 1.5px solid var(--gold);
+      color: var(--gold);
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--gold-dark);
+      box-shadow: 0 0 8px var(--gold);
+      background-color: var(--form-bg);
+      color: var(--gold);
+    }
+
+    .form-control::placeholder {
+      color: rgba(212, 175, 55, 0.6);
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+
+    .btn-submit {
+      display: block;
+      margin: 2rem auto 0 auto;
+      width: 180px;
+    }
+
+    /* Testimonials Section */
+    #testimonials {
+      padding: 5rem 1rem;
+      background-color: var(--black);
+      color: var(--gold);
+    }
+
+    #testimonials h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.75rem;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold);
+    }
+
+    .testimonial-card {
+      background-color: var(--black);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+      color: var(--gold);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      color: var(--text-gold);
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 1rem;
+      text-align: right;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--black);
+      color: var(--gold);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--gold);
+    }
+
+    footer a {
+      color: var(--gold);
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover,
+    footer a:focus {
+      color: var(--gold-dark);
+    }
+
+    /* Modern theme switch */
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+      height: 38px;
+      margin-left: 1rem;
     }
     
-    h1, h2, h3, h4, h5, .navbar-brand {
-      font-family: 'Cinzel', serif;
+    .theme-switch-input {
+      display: none;
+    }
+    
+    .theme-switch-label {
+      cursor: pointer;
+      width: 60px;
+      height: 30px;
+      background: var(--gray-light);
+      border-radius: 50px;
+      position: relative;
+      display: inline-block;
+      transition: background 0.3s;
+      border: 2px solid var(--gold);
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .theme-switch-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 22px;
+      height: 22px;
+      background: var(--gold);
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(212,175,55,0.3);
+    }
+    
+    .theme-switch-label .moon,
+    .theme-switch-label .sun {
+      position: absolute;
+      font-size: 0.9rem;
+      top: 6px;
+      transition: opacity 0.3s;
+      line-height: 1;
+    }
+    
+    .theme-switch-label .moon {
+      left: 8px;
+      color: var(--black);
+      opacity: 1;
+    }
+    
+    .theme-switch-label .sun {
+      right: 8px;
+      color: #fff;
+      opacity: 0;
+    }
+    
+    .theme-switch-input:checked + .theme-switch-label {
+      background: var(--gold);
+    }
+    
+    .theme-switch-input:checked + .theme-switch-label .theme-switch-slider {
+      transform: translateX(30px);
+      background: #fff;
+    }
+    
+    .theme-switch-input:checked + .theme-switch-label .moon {
+      opacity: 0;
+    }
+    
+    .theme-switch-input:checked + .theme-switch-label .sun {
+      opacity: 1;
+    }
+
+    /* Language toggle */
+    .language-toggle {
+      display: flex;
+      align-items: center;
+      margin-left: 1rem;
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      overflow: hidden;
+      height: 38px;
+    }
+    
+    .language-btn {
+      background: transparent;
+      border: none;
+      color: var(--gold);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
       font-weight: 600;
     }
     
-    /* Navbar */
-    .navbar {
-      background-color: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
-      padding: 0.8rem 0;
-    }
-    
-    .navbar-brand {
-      font-size: 1.8rem;
-      color: var(--gold) !important;
-      letter-spacing: 1px;
-    }
-    
-    .navbar-nav .nav-link {
-      color: var(--text-light) !important;
-      font-weight: 500;
-      padding: 0.5rem 1.2rem !important;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-    
-    .navbar-nav .nav-link:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 1px;
+    .language-btn.active {
       background: var(--gold);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
+      color: var(--black);
     }
-    
-    .navbar-nav .nav-link:hover:after,
-    .navbar-nav .nav-link.active:after {
-      width: 70%;
-    }
-    
-    .navbar-nav .nav-link:hover {
-      color: var(--gold) !important;
-    }
-    
-    /* Hero Section */
-    .hero-section {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a1a1a"/><path d="M0 50 L100 50" stroke="%23333" stroke-width="1"/><path d="M50 0 L50 100" stroke="%23333" stroke-width="1"/></svg>');
-      background-size: cover;
-      padding: 6rem 0;
-      text-align: center;
-    }
-    
-    .hero-title {
-      font-size: 3.5rem;
-      margin-bottom: 1.5rem;
-      color: var(--gold);
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    .hero-subtitle {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      color: var(--text-light);
-      font-weight: 300;
-    }
-    
-    /* Section Headers */
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-      position: relative;
-    }
-    
-    .section-header h2 {
-      font-size: 2.5rem;
-      color: var(--gold);
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    
-    .section-header:after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto;
-    }
-    
-    /* Cards */
-    .product-card {
-      background: var(--charcoal);
-      border: 1px solid rgba(198, 164, 103, 0.2);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      height: 100%;
-    }
-    
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      border-color: var(--gold);
-    }
-    
-    .card-img-container {
-      height: 250px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .product-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    
-    .product-card:hover img {
-      transform: scale(1.05);
-    }
-    
-    .card-body {
-      padding: 1.5rem;
-    }
-    
-    .card-title {
-      font-family: 'Cinzel', serif;
-      color: var(--gold);
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-    }
-    
-    .card-text {
-      color: #b0b0b0;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    /* Buttons */
-    .btn-gold {
-      background-color: var(--gold);
-      color: #000;
-      font-weight: 500;
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-    }
-    
-    .btn-gold:hover {
-      background-color: var(--light-gold);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(198, 164, 103, 0.3);
-    }
-    
-    /* Contact Section */
-    .contact-section {
-      background: var(--charcoal);
-      padding: 5rem 0;
-    }
-    
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--dark-bg);
-      border-top: 1px solid rgba(198, 164, 103, 0.2);
-      padding: 3rem 0 1.5rem;
-    }
-    
-    footer a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s ease;
-      position: relative;
-    }
-    
-    footer a:after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: width 0.3s ease;
-    }
-    
-    footer a:hover {
-      color: var(--gold);
-    }
-    
-    footer a:hover:after {
-      width: 100%;
-    }
-    
-    .footer-divider {
-      color: var(--gold);
-      margin: 0 0.5rem;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
+
+    /* Responsive tweaks */
+    @media (max-width: 992px) {
+      .theme-switch-wrapper,
+      .language-toggle {
+        margin-left: 0;
+        margin-top: 1rem;
       }
       
-      .section-header h2 {
+      .navbar-nav {
+        padding-bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #hero h1 {
+        font-size: 2.5rem;
+      }
+      #hero p {
+        font-size: 1rem;
+      }
+      #services h2,
+      #client-form h2,
+      #testimonials h2 {
         font-size: 2rem;
       }
       
-      .navbar-nav .nav-link {
-        padding: 0.5rem 0 !important;
+      .language-toggle {
+        width: 100%;
+        justify-content: center;
       }
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background-color: #f8f9fa !important;
+      color: #333 !important;
+    }
+    
+    body.light-mode .navbar,
+    body.light-mode #services,
+    body.light-mode #client-form,
+    body.light-mode #testimonials,
+    body.light-mode footer {
+      background-color: #fff !important;
+      color: #333 !important;
+    }
+    
+    body.light-mode .service-card,
+    body.light-mode .testimonial-card {
+      background-color: #f8f9fa !important;
+      color: #333 !important;
+      box-shadow: 0 0 15px rgba(0,0,0,0.08);
+    }
+    
+    body.light-mode .form-control,
+    body.light-mode .form-select {
+      background-color: #fff;
+      color: #333;
+      border-color: #ccc;
+    }
+    
+    body.light-mode .form-control:focus,
+    body.light-mode .form-select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+      background-color: #fff;
+      color: #333;
+    }
+    
+    body.light-mode .btn-gold {
+      background-color: var(--black);
+      color: var(--gold);
+    }
+    
+    body.light-mode .btn-gold:hover,
+    body.light-mode .btn-gold:focus {
+      background-color: var(--gray-light);
+      color: var(--gold);
     }
   </style>
 </head>
 <body>
-
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">TREND FOR MAN</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand fw-bold" href="#">Noortomark</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="#about"><i class="fa-solid fa-circle-info me-1"></i> About</a>
+            <a class="nav-link" href="#hero" data-translate="home">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#products"><i class="fa-solid fa-crown me-1"></i> Collections</a>
+            <a class="nav-link" href="#about" data-translate="about">À propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact"><i class="fa-solid fa-envelope me-1"></i> Contact</a>
+            <a class="nav-link" href="#services" data-translate="services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#client-form" data-translate="contact">Contact</a>
           </li>
         </ul>
+        
+        <!-- Language Toggle -->
+        <div class="language-toggle ">
+          <button class="language-btn active" data-lang="fr">FR</button>
+          <button class="language-btn" data-lang="en">EN</button>
+        </div>
+        
+        <!-- Theme Toggle -->
+        <div class="theme-switch-wrapper ms-3">
+          <input type="checkbox" id="themeSwitch" class="theme-switch-input" />
+          <label class="theme-switch-label" for="themeSwitch" title="Changer le mode">
+            <span class="theme-switch-slider">
+              <i class="bi bi-moon-fill moon"></i>
+              <i class="bi bi-sun-fill sun"></i>
+            </span>
+          </label>
+        </div>
       </div>
     </div>
   </nav>
-
+  
   <!-- Hero Section -->
-  <section id="about" class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">ELEVATE YOUR ESSENCE</h1>
-      <p class="hero-subtitle">Discover our exclusive collection of luxury timepieces, refined fragrances, and sophisticated eyewear crafted for the discerning gentleman who appreciates timeless elegance.</p>
-      <a href="#products" class="btn btn-gold">Explore Collections</a>
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center text-center">
+    <h1 class="mb-3">Noortomark</h1>
+    <p class="mb-4 px-3" data-translate="hero-text">
+      Élevez votre marque avec un luxe et un professionnalisme inégalés
+    </p>
+    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+      <a href="#services" class="btn btn-gold btn-lg shadow" data-translate="discover-services">Découvrir nos services</a>
+      <a href="#client-form" class="btn btn-dark btn-lg shadow" data-translate="place-order">Passer une commande</a>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="products" class="py-5">
-    <div class="container">
-      <div class="section-header">
-        <h2>EXCLUSIVE COLLECTIONS</h2>
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h2 class="mb-5" data-translate="our-services">Nos Services Premium</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-briefcase-fill service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="luxury-branding">Branding de Luxe</h5>
+          <p data-translate="luxury-branding-desc">Création d'identités de marque exclusives qui évoquent prestige et élégance.</p>
+        </div>
       </div>
-      <div class="row g-4">
-        
-        <!-- Card 1 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container">
-              <img src="./src/rolexdayplatine.jpg" class="card-img-top" alt="Rolex Day Date Platine">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Rolex Day Date Platine</h5>
-              <p class="card-text">Crafted in prestigious platinum with a flawless diamond-set bezel. The epitome of luxury and precision.</p>
-              <a href="#" class="btn btn-gold">Inquire Now</a>
-            </div>
-          </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-palette-fill service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="premium-design">Design Premium</h5>
+          <p data-translate="premium-design-desc">Des solutions de design alliant sophistication et esthétique moderne.</p>
         </div>
-
-        <!-- Card 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container">
-              <img src="./src/rolexarabic.jpg" class="card-img-top" alt="Rolex Arabic Dial">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Rolex Arabic Dial</h5>
-              <p class="card-text">An exclusive timepiece featuring an elegant Arabic numeral dial, blending heritage with modern sophistication.</p>
-              <a href="#" class="btn btn-gold">Inquire Now</a>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-globe service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="global-marketing">Marketing Global</h5>
+          <p data-translate="global-marketing-desc">Des campagnes stratégiques pour propulser votre marque à l'international.</p>
         </div>
-
-        <!-- Card 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container">
-              <img src="./src/rolexblue.jpg" class="card-img-top" alt="Blue Rolex">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Blue Rolex Datejust</h5>
-              <p class="card-text">A striking timepiece with a sunray finish blue dial, embodying both sportiness and elegance.</p>
-              <a href="#" class="btn btn-gold">Inquire Now</a>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-graph-up-arrow service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="business-consulting">Conseil en Affaires</h5>
+          <p data-translate="business-consulting-desc">Des conseils d'experts pour optimiser votre croissance et votre impact.</p>
         </div>
-
-        <!-- Card 4 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container">
-              <img src="./src/919parfume.jpg" class="card-img-top" alt="919 Perfume">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">919 Exclusive Fragrance</h5>
-              <p class="card-text">A captivating blend of rare ingredients creating a signature scent that defines masculine elegance.</p>
-              <a href="#" class="btn btn-gold">Inquire Now</a>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-shield-lock-fill service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="security-privacy">Sécurité & Confidentialité</h5>
+          <p data-translate="security-privacy-desc">Protégez l'intégrité de votre marque avec des solutions de sécurité haut de gamme.</p>
         </div>
-
-        <!-- Card 5 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container">
-              <img src="./src/glaces1.jpg" class="card-img-top" alt="Classic Shades">
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">Signature Eyewear</h5>
-              <p class="card-text">Handcrafted titanium frames with precision lenses, offering unparalleled clarity and sophisticated style.</p>
-              <a href="#" class="btn btn-gold">Inquire Now</a>
-            </div>
-          </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="service-card text-center h-100">
+          <i class="bi bi-phone-fill service-icon" aria-hidden="true"></i>
+          <h5 class="mb-3" data-translate="premium-support">Support Premium 24/7</h5>
+          <p data-translate="premium-support-desc">Assistance dédiée à tout moment pour un service sans faille.</p>
         </div>
-
-        <!-- Card 6 - Placeholder for future products -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="product-card">
-            <div class="card-img-container" style="background: var(--light-charcoal); display: flex; align-items: center; justify-content: center;">
-              <i class="fas fa-plus" style="font-size: 3rem; color: var(--gold);"></i>
-            </div>
-            <div class="card-body text-center">
-              <h5 class="card-title">New Arrivals</h5>
-              <p class="card-text">Discover our latest additions to the collection, curated for the modern connoisseur.</p>
-              <a href="#contact" class="btn btn-gold">Contact Us</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container text-center">
-      <div class="section-header">
-        <h2>PERSONAL CONSULTATION</h2>
+  <!-- Client Form Section -->
+  <section id="client-form" class="container">
+    <h2 class="mb-5" data-translate="request-service">Demandez Votre Service</h2>
+    <form class="mx-auto" style="max-width: 600px;" novalidate>
+      <div class="mb-4">
+        <label for="serviceSelect" class="form-label" data-translate="choose-service">Choisissez un service</label>
+        <select class="form-select" id="serviceSelect" required>
+          <option value="" selected disabled data-translate="choose-service-placeholder">Choisissez un service...</option>
+          <option data-translate="luxury-branding">Branding de Luxe</option>
+          <option data-translate="premium-design">Design Premium</option>
+          <option data-translate="global-marketing">Marketing Global</option>
+          <option data-translate="business-consulting">Conseil en Affaires</option>
+          <option data-translate="security-privacy">Sécurité & Confidentialité</option>
+          <option data-translate="premium-support">Support Premium 24/7</option>
+        </select>
       </div>
-      <p class="text-muted mb-4">Experience our personalized service for selecting the perfect pieces to complement your style.</p>
-      <a href="mailto:info@mohcineaccessories.com" class="btn btn-gold contact-btn">
-        <i class="fa-solid fa-envelope me-1"></i> Request Consultation
-      </a>
+      <div class="mb-4">
+        <label for="nameInput" class="form-label" data-translate="full-name">Nom complet</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nameInput"
+          placeholder="Votre nom complet"
+          required
+          autocomplete="name"
+          data-translate="name-placeholder"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="emailInput" class="form-label" data-translate="email-address">Adresse e-mail</label>
+        <input
+          type="email"
+          class="form-control"
+          id="emailInput"
+          placeholder="nom@exemple.com"
+          required
+          autocomplete="email"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="phoneInput" class="form-label" data-translate="phone-number">Numéro de téléphone</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="phoneInput"
+          placeholder="+212 6 12 34 56 78"
+          required
+          autocomplete="tel"
+        />
+      </div>
+      <div class="mb-4">
+        <label for="messageInput" class="form-label" data-translate="additional-message">Message supplémentaire (optionnel)</label>
+        <textarea
+          class="form-control"
+          id="messageInput"
+          rows="4"
+          placeholder="Votre message ou vos besoins"
+          data-translate="message-placeholder"
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold btn-submit shadow" data-translate="send">Envoyer</button>
+    </form>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="container">
+    <h2 class="mb-5" data-translate="testimonials-title">Ce que disent nos clients</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="testimonial-card h-100">
+          <p class="testimonial-text" data-translate="testimonial-1">
+            "Noortomark a transformé notre identité de marque en un symbole de luxe et de confiance. Leur souci du détail est incomparable."
+          </p>
+          <div class="testimonial-author">– Sarah L., PDG de LuxeCorp</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="testimonial-card h-100">
+          <p class="testimonial-text" data-translate="testimonial-2">
+            "Le design premium et les services marketing nous ont permis d'atteindre une audience mondiale avec élégance et impact."
+          </p>
+          <div class="testimonial-author">– Ahmed K., Fondateur de Elite Ventures</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="testimonial-card h-100">
+          <p class="testimonial-text" data-translate="testimonial-3">
+            "Conseil exceptionnel et support 24/7. Noortomark est vraiment un partenaire de notre réussite."
+          </p>
+          <div class="testimonial-author">– Maria P., Directrice chez Prestige Solutions</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p class="mb-2">&copy; 2025 Mohcine Accessories. All Rights Reserved.</p>
-      <p class="mb-0">
-        <a href="#about">About</a> 
-        <span class="footer-divider">|</span>
-        <a href="#products">Collections</a> 
-        <span class="footer-divider">|</span>
-        <a href="#contact">Contact</a>
-      </p>
+  <footer>
+    <div class="mb-2">
+      <small data-translate="contact-info">Contactez-nous : messoudilaila9@gmail.com  |  +212 6 19 64 62 65</small>
+    </div>
+    <div>
+      <a href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter"><i class="bi bi-twitter"></i></a>
+      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+    </div>
+    <div class="mt-3">
+      <small data-translate="copyright">© 2025 Noortomark. Tous droits réservés.</small>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap 5 JS Bundle (Popper + Bootstrap JS) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  <script>
+    // Language translations
+    const translations = {
+      'en': {
+        'home': 'Home',
+        'about': 'About',
+        'services': 'Services',
+        'contact': 'Contact',
+        'hero-text': 'Elevate your brand with unmatched luxury and professionalism',
+        'discover-services': 'Discover our services',
+        'place-order': 'Place an order',
+        'our-services': 'Our Premium Services',
+        'luxury-branding': 'Luxury Branding',
+        'luxury-branding-desc': 'Creation of exclusive brand identities that evoke prestige and elegance.',
+        'premium-design': 'Premium Design',
+        'premium-design-desc': 'Design solutions combining sophistication and modern aesthetics.',
+        'global-marketing': 'Global Marketing',
+        'global-marketing-desc': 'Strategic campaigns to propel your brand internationally.',
+        'business-consulting': 'Business Consulting',
+        'business-consulting-desc': 'Expert advice to optimize your growth and impact.',
+        'security-privacy': 'Security & Privacy',
+        'security-privacy-desc': 'Protect your brand integrity with high-end security solutions.',
+        'premium-support': 'Premium Support 24/7',
+        'premium-support-desc': 'Dedicated assistance at all times for seamless service.',
+        'request-service': 'Request Your Service',
+        'choose-service': 'Choose a service',
+        'choose-service-placeholder': 'Choose a service...',
+        'full-name': 'Full name',
+        'name-placeholder': 'Your full name',
+        'email-address': 'Email address',
+        'phone-number': 'Phone number',
+        'additional-message': 'Additional message (optional)',
+        'message-placeholder': 'Your message or needs',
+        'send': 'Send',
+        'testimonials-title': 'What Our Clients Say',
+        'testimonial-1': '"Noortomark transformed our brand identity into a symbol of luxury and trust. Their attention to detail is unmatched."',
+        'testimonial-2': '"The premium design and marketing services allowed us to reach a global audience with elegance and impact."',
+        'testimonial-3': '"Exceptional advice and 24/7 support. Noortomark is truly a partner in our success."',
+        'contact-info': 'Contact us: messoudilaila9@gmail.com  |  +212 6 19 64 62 65',
+        'copyright': '© 2025 Noortomark. All rights reserved.'
+      },
+      'fr': {
+        'home': 'Accueil',
+        'about': 'À propos',
+        'services': 'Services',
+        'contact': 'Contact',
+        'hero-text': 'Élevez votre marque avec un luxe et un professionnalisme inégalés',
+        'discover-services': 'Découvrir nos services',
+        'place-order': 'Passer une commande',
+        'our-services': 'Nos Services Premium',
+        'luxury-branding': 'Branding de Luxe',
+        'luxury-branding-desc': 'Création d\'identités de marque exclusives qui évoquent prestige et élégance.',
+        'premium-design': 'Design Premium',
+        'premium-design-desc': 'Des solutions de design alliant sophistication et esthétique moderne.',
+        'global-marketing': 'Marketing Global',
+        'global-marketing-desc': 'Des campagnes stratégiques pour propulser votre marque à l\'international.',
+        'business-consulting': 'Conseil en Affaires',
+        'business-consulting-desc': 'Des conseils d\'experts pour optimiser votre croissance et votre impact.',
+        'security-privacy': 'Sécurité & Confidentialité',
+        'security-privacy-desc': 'Protégez l\'intégrité de votre marque avec des solutions de sécurité haut de gamme.',
+        'premium-support': 'Support Premium 24/7',
+        'premium-support-desc': 'Assistance dédiée à tout moment pour un service sans faille.',
+        'request-service': 'Demandez Votre Service',
+        'choose-service': 'Choisissez un service',
+        'choose-service-placeholder': 'Choisissez un service...',
+        'full-name': 'Nom complet',
+        'name-placeholder': 'Votre nom complet',
+        'email-address': 'Adresse e-mail',
+        'phone-number': 'Numéro de téléphone',
+        'additional-message': 'Message supplémentaire (optionnel)',
+        'message-placeholder': 'Votre message ou vos besoins',
+        'send': 'Envoyer',
+        'testimonials-title': 'Ce que disent nos clients',
+        'testimonial-1': '"Noortomark a transformé notre identité de marque en un symbole de luxe et de confiance. Leur souci du détail est incomparable."',
+        'testimonial-2': '"Le design premium et les services marketing nous ont permis d\'atteindre une audience mondiale avec élégance et impact."',
+        'testimonial-3': '"Conseil exceptionnel et support 24/7. Noortomark est vraiment un partenaire de notre réussite."',
+        'contact-info': 'Contactez-nous : messoudilaila9@gmail.com  |  +212 6 19 64 62 65',
+        'copyright': '© 2025 Noortomark. Tous droits réservés.'
+      }
+    };
+
+    // Language switching functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const languageButtons = document.querySelectorAll('.language-btn');
+      let currentLang = localStorage.getItem('language') || 'fr';
+      
+      // Set initial language
+      setLanguage(currentLang);
+      
+      // Update active button
+      document.querySelectorAll('.language-btn').forEach(btn => {
+        if (btn.dataset.lang === currentLang) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      
+      // Add click event to language buttons
+      languageButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const lang = this.dataset.lang;
+          setLanguage(lang);
+          
+          // Update active button
+          languageButtons.forEach(btn => {
+            if (btn === this) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+          
+          // Save preference
+          localStorage.setItem('language', lang);
+        });
+      });
+      
+      function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        
+        // Update all translatable elements
+        document.querySelectorAll('[data-translate]').forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.placeholder = translations[lang][key];
+            } else if (element.tagName === 'OPTION') {
+              element.textContent = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          }
+        });
+      }
+    });
+
+    // Simple form validation example (optional)
+    (() => {
+      "use strict";
+      const form = document.querySelector("form");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      form.addEventListener(
+        "submit",
+        (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Sending...";
+
+          // Get form values
+          const service = document.getElementById("serviceSelect").value;
+          const name = document.getElementById("nameInput").value;
+          const email = document.getElementById("emailInput").value;
+          const phone = document.getElementById("phoneInput").value;
+          const message = document.getElementById("messageInput").value;
+
+          // Compose WhatsApp message
+          const text =
+            `Service: ${service}\n` +
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Phone: ${phone}\n` +
+            (message ? `Message: ${message}` : "");
+
+          // Replace with your WhatsApp number (format: 212XXXXXXXXX for Morocco)
+          const whatsappNumber = "212619646265";
+          const url =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(text);
+
+          window.open(url, "_blank");
+          
+          // Reset form after a delay
+          setTimeout(() => {
+            form.reset();
+            form.classList.remove("was-validated");
+            submitBtn.disabled = false;
+            submitBtn.textContent = document.documentElement.lang === 'en' ? 'Send' : 'Envoyer';
+          }, 1000);
+        },
+        false
+      );
+    })();
+
+    // Mode clair/noir
+    const themeSwitch = document.getElementById('themeSwitch');
+    if (localStorage.getItem('lightMode') === 'on') {
+      document.body.classList.add('light-mode');
+      themeSwitch.checked = true;
+    }
+    themeSwitch.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.classList.add('light-mode');
+        localStorage.setItem('lightMode', 'on');
+      } else {
+        document.body.classList.remove('light-mode');
+        localStorage.setItem('lightMode', 'off');
+      }
+    });
+  </script>
 </body>
 </html>
