@@ -7,6 +7,7 @@
   
   <meta name="description" content="Noortomark - Elevate your brand with unmatched luxury and professionalism. Discover our premium services including luxury branding, premium design, global marketing, business consulting, security & privacy, and 24/7 support." />
   <meta name="keywords" content="Noortomark, luxury branding, premium design, global marketing, business consulting, security, privacy, 24/7 support, professional services, brand elevation, noor to mark ,noortomark agency ,noortomark agence ,noor to mark agency, noor to mark agence,noor agency,noor agence,noortomark services" />
+  
   <!-- Bootstrap 5 CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -22,6 +23,7 @@
     :root {
       --gold: #d4af37;
       --gold-dark: #b08b2f;
+      --gold-light: #f0d87d;
       --black: #000000;
       --gray-dark: #1a1a1a;
       --gray-light: #333333;
@@ -31,10 +33,10 @@
 
     body {
       background-color: var(--black);
-      
       color: var(--gold);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       padding-top: 90px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     a,
@@ -50,34 +52,45 @@
       font-weight: 600;
       border-radius: 50px;
       padding: 0.75rem 2.5rem;
-      transition: background-color 0.3s ease;
-      border: none;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
     }
+
     .btn-dark {
       background-color: var(--gold);
       color: var(--black);
       font-weight: 600;
       border-radius: 50px;
       padding: 0.75rem 2.5rem;
-      transition: background-color 0.3s ease;
-      border: none;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
     }
 
     .btn-gold:hover,
     .btn-gold:focus {
       background-color: var(--gold-dark);
       color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-dark:hover,
+    .btn-dark:focus {
+      background-color: var(--gold-light);
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
     }
 
     /* Navbar */
     .navbar {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.95);
       border-bottom: 1.5px solid var(--gold);
       backdrop-filter: blur(6px);
       box-shadow: 0 4px 24px 0 rgba(212, 175, 55, 0.08);
       padding-top: 1rem;
       padding-bottom: 1rem;
-      transition: background 0.3s;
+      transition: all 0.3s;
     }
 
     .navbar-brand {
@@ -92,11 +105,17 @@
       border-color: var(--gold);
       outline: none;
       box-shadow: none;
-     
+      padding: 0.25rem 0.5rem;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.5);
     }
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='gold' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28212, 175, 55, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      width: 1.25em;
+      height: 1.25em;
     }
 
     .nav-link {
@@ -141,9 +160,10 @@
       flex-direction: column;
       justify-content: center;
       padding: 3rem 1rem;
-      background-image: url(5911148255692049482.jpg);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(5911148255692049482.jpg);
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
     }
 
     #hero h1 {
@@ -160,6 +180,31 @@
       font-size: 1.25rem;
       margin-bottom: 2.5rem;
       max-width: 600px;
+      color: var(--text-gold);
+    }
+
+    /* About Section */
+    #about {
+      padding: 5rem 1rem;
+      background-color: var(--black);
+      color: var(--gold);
+    }
+
+    #about h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.75rem;
+      margin-bottom: 3rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-shadow: 0 0 8px var(--gold);
+    }
+
+    #about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
       color: var(--text-gold);
     }
 
@@ -193,13 +238,15 @@
       border-radius: 1rem;
       padding: 2rem 1.5rem;
       box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
       height: 100%;
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .service-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 0 25px var(--gold);
+      border-color: var(--gold);
     }
 
     /* Client Form Section */
@@ -283,6 +330,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .testimonial-text {
@@ -321,6 +369,7 @@
     footer a:hover,
     footer a:focus {
       color: var(--gold-dark);
+      transform: translateY(-2px);
     }
 
     /* Modern theme switch */
@@ -437,6 +486,12 @@
       .navbar-nav {
         padding-bottom: 1rem;
       }
+      
+      .nav-link {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0.5rem 0;
+      }
     }
 
     @media (max-width: 576px) {
@@ -448,13 +503,19 @@
       }
       #services h2,
       #client-form h2,
-      #testimonials h2 {
+      #testimonials h2,
+      #about h2 {
         font-size: 2rem;
       }
       
       .language-toggle {
         width: 100%;
         justify-content: center;
+      }
+      
+      .btn-gold, .btn-dark {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
       }
     }
 
@@ -468,6 +529,7 @@
     body.light-mode #services,
     body.light-mode #client-form,
     body.light-mode #testimonials,
+    body.light-mode #about,
     body.light-mode footer {
       background-color: #fff !important;
       color: #333 !important;
@@ -478,6 +540,7 @@
       background-color: #f8f9fa !important;
       color: #333 !important;
       box-shadow: 0 0 15px rgba(0,0,0,0.08);
+      border-color: rgba(0,0,0,0.1);
     }
     
     body.light-mode .form-control,
@@ -504,6 +567,34 @@
     body.light-mode .btn-gold:focus {
       background-color: var(--gray-light);
       color: var(--gold);
+    }
+    
+    body.light-mode .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    body.light-mode .nav-link {
+      color: #333;
+    }
+    
+    body.light-mode .nav-link:hover,
+    body.light-mode .nav-link:focus {
+      color: var(--gold-dark);
+    }
+    
+    body.light-mode .nav-link::after {
+      background: var(--gold-dark);
+    }
+    
+    body.light-mode #hero {
+      background-image: linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.7)), url(5911148255692049482.jpg);
+    }
+    
+    body.light-mode #hero h1,
+    body.light-mode #hero p,
+    body.light-mode #about p,
+    body.light-mode .testimonial-text {
+      color: #333;
     }
   </style>
 </head>
@@ -532,7 +623,7 @@
         </ul>
         
         <!-- Language Toggle -->
-        <div class="language-toggle ">
+        <div class="language-toggle">
           <button class="language-btn active" data-lang="fr">FR</button>
           <button class="language-btn" data-lang="en">EN</button>
         </div>
@@ -560,6 +651,30 @@
     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
       <a href="#services" class="btn btn-gold btn-lg shadow" data-translate="discover-services">Découvrir nos services</a>
       <a href="#client-form" class="btn btn-dark btn-lg shadow" data-translate="place-order">Passer une commande</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <!-- Content -->
+        <div class="col-lg-10">
+          <h2 class="fw-bold mb-4 text-center" data-translate="about-title">
+            À propos de NoortoMark
+          </h2>
+          <p class="mb-4" data-translate="about-p1">
+            NoortoMark est une agence de solutions digitales moderne qui aide les entreprises 
+            à renforcer leur présence en ligne grâce à un design, un développement et un branding de pointe.  
+            Nous combinons créativité et stratégie pour livrer des sites et des plateformes qui se démarquent réellement.
+          </p>
+          <p class="mb-4" data-translate="about-p2">
+            Des pages d'accueil élégantes aux solutions e-commerce complètes, notre équipe garantit que chaque projet 
+            reflète une qualité premium, de l'innovation et des résultats. Chez NoortoMark, notre mission est simple :  
+            transformer vos idées en expériences digitales impactantes.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -627,6 +742,7 @@
           <option data-translate="security-privacy">Sécurité & Confidentialité</option>
           <option data-translate="premium-support">Support Premium 24/7</option>
         </select>
+        <div class="invalid-feedback" data-translate="service-error">Veuillez sélectionner un service.</div>
       </div>
       <div class="mb-4">
         <label for="nameInput" class="form-label" data-translate="full-name">Nom complet</label>
@@ -639,6 +755,7 @@
           autocomplete="name"
           data-translate="name-placeholder"
         />
+        <div class="invalid-feedback" data-translate="name-error">Veuillez entrer votre nom complet.</div>
       </div>
       <div class="mb-4">
         <label for="emailInput" class="form-label" data-translate="email-address">Adresse e-mail</label>
@@ -650,6 +767,7 @@
           required
           autocomplete="email"
         />
+        <div class="invalid-feedback" data-translate="email-error">Veuillez entrer une adresse e-mail valide.</div>
       </div>
       <div class="mb-4">
         <label for="phoneInput" class="form-label" data-translate="phone-number">Numéro de téléphone</label>
@@ -661,6 +779,7 @@
           required
           autocomplete="tel"
         />
+        <div class="invalid-feedback" data-translate="phone-error">Veuillez entrer un numéro de téléphone valide.</div>
       </div>
       <div class="mb-4">
         <label for="messageInput" class="form-label" data-translate="additional-message">Message supplémentaire (optionnel)</label>
@@ -710,13 +829,13 @@
   <!-- Footer -->
   <footer>
     <div class="mb-2">
-      <small data-translate="contact-info">Contactez-nous : messoudilaila9@gmail.com  |  +212 6 19 64 62 65</small>
+      <small data-translate="contact-info">Contactez-nous : noortomark@gmail.com  |  +212 7 80 53 96 18</small>
     </div>
     <div>
-      <a href="https://facebook.com/" target="_blank" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
-      <a href="https://twitter.com/" target="_blank" aria-label="Twitter" title="Twitter"><i class="bi bi-twitter"></i></a>
-      <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="https://instagram.com/" target="_blank" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="http://facebook.com/share/1FV5bkLU7J/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="http://tiktok.com/@noortomark" target="_blank" aria-label="Tiktok" title="Tiktok">  <i class="bi bi-tiktok"></i></a>
+      <a href="https://youtube.com/@NOORTOMARK" target="_blank" aria-label="Youtube" title="Youtube"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.instagram.com/noortomark" target="_blank" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
     </div>
     <div class="mt-3">
       <small data-translate="copyright">© 2025 Noortomark. Tous droits réservés.</small>
@@ -765,8 +884,15 @@
         'testimonial-1': '"Noortomark transformed our brand identity into a symbol of luxury and trust. Their attention to detail is unmatched."',
         'testimonial-2': '"The premium design and marketing services allowed us to reach a global audience with elegance and impact."',
         'testimonial-3': '"Exceptional advice and 24/7 support. Noortomark is truly a partner in our success."',
-        'contact-info': 'Contact us: messoudilaila9@gmail.com  |  +212 6 19 64 62 65',
-        'copyright': '© 2025 Noortomark. All rights reserved.'
+        'contact-info': 'Contact us: noortomark@gmail.com  |  +212 7 80 53 96 18',
+        'copyright': '© 2025 Noortomark. All rights reserved.',
+        'about-title': 'About NoortoMark',
+        'about-p1': 'NoortoMark is a modern digital solutions agency that helps businesses build a strong online presence through cutting-edge design, development, and branding. We combine creativity with strategy to deliver websites and platforms that truly stand out.',
+        'about-p2': 'From elegant landing pages to full-scale e-commerce solutions, our team ensures every project reflects premium quality, innovation, and results. At NoortoMark, our mission is simple: to transform your ideas into impactful digital experiences.',
+        'service-error': 'Please select a service.',
+        'name-error': 'Please enter your full name.',
+        'email-error': 'Please enter a valid email address.',
+        'phone-error': 'Please enter a valid phone number.'
       },
       'fr': {
         'home': 'Accueil',
@@ -803,8 +929,15 @@
         'testimonial-1': '"Noortomark a transformé notre identité de marque en un symbole de luxe et de confiance. Leur souci du détail est incomparable."',
         'testimonial-2': '"Le design premium et les services marketing nous ont permis d\'atteindre une audience mondiale avec élégance et impact."',
         'testimonial-3': '"Conseil exceptionnel et support 24/7. Noortomark est vraiment un partenaire de notre réussite."',
-        'contact-info': 'Contactez-nous : messoudilaila9@gmail.com  |  +212 6 19 64 62 65',
-        'copyright': '© 2025 Noortomark. Tous droits réservés.'
+        'contact-info': 'Contactez-nous : noortomark@gmail.com  |  +212 7 80 53 96 18',
+        'copyright': '© 2025 Noortomark. Tous droits réservés.',
+        'about-title': 'À propos de NoortoMark',
+        'about-p1': 'NoortoMark est une agence de solutions digitales moderne qui aide les entreprises à renforcer leur présence en ligne grâce à un design, un développement et un branding de pointe. Nous combinons créativité et stratégie pour livrer des sites et des plateformes qui se démarquent réellement.',
+        'about-p2': 'Des pages d\'accueil élégantes aux solutions e-commerce complètes, notre équipe garantit que chaque projet reflète une qualité premium, de l\'innovation et des résultats. Chez NoortoMark, notre mission est simple : transformer vos idées en expériences digitales impactantes.',
+        'service-error': 'Veuillez sélectionner un service.',
+        'name-error': 'Veuillez entrer votre nom complet.',
+        'email-error': 'Veuillez entrer une adresse e-mail valide.',
+        'phone-error': 'Veuillez entrer un numéro de téléphone valide.'
       }
     };
 
@@ -864,11 +997,12 @@
       }
     });
 
-    // Simple form validation example (optional)
+    // Form validation and submission
     (() => {
       "use strict";
       const form = document.querySelector("form");
       const submitBtn = form.querySelector('button[type="submit"]');
+      
       form.addEventListener(
         "submit",
         (event) => {
@@ -881,7 +1015,7 @@
           }
 
           submitBtn.disabled = true;
-          submitBtn.textContent = "Sending...";
+          submitBtn.textContent = document.documentElement.lang === 'en' ? 'Sending...' : 'Envoi en cours...';
 
           // Get form values
           const service = document.getElementById("serviceSelect").value;
@@ -899,7 +1033,7 @@
             (message ? `Message: ${message}` : "");
 
           // Replace with your WhatsApp number (format: 212XXXXXXXXX for Morocco)
-          const whatsappNumber = "212619646265";
+          const whatsappNumber = "212780539618";
           const url =
             "https://wa.me/" +
             whatsappNumber +
@@ -920,7 +1054,7 @@
       );
     })();
 
-    // Mode clair/noir
+    // Light/dark mode toggle
     const themeSwitch = document.getElementById('themeSwitch');
     if (localStorage.getItem('lightMode') === 'on') {
       document.body.classList.add('light-mode');
